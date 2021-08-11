@@ -1,0 +1,28 @@
+<header>
+  <img src="./boston.png" alt="" style="width: 50%; height: 50%" />
+
+  <h1>Boston Employee Salary Data</h1>
+</header>
+<div id="container">
+  <!-- populated by JS-->
+</div>
+<script src="./boston.js"></script>
+<script>
+  function renderboston(boston, container) {
+    var person = boston.data;
+    var len = boston.data.length;
+    var html = "";
+    for (let i = 0; i < len; i++) {
+      html +=
+        '<li class="post">' +
+        "<h2>" +
+        person[i][8] +
+        "</h2>" +
+        "<h3>" +
+        person[i][11] +
+        "</h3>";
+    }
+    container.innerHTML = '<ul id = "boston">' + html + "</ul>";
+  }
+  renderboston(boston, document.getElementById("container"));
+</script>
